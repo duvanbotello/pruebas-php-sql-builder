@@ -2,15 +2,17 @@
 
 define('ROOT_DIR', dirname(__FILE__));
 
-$db = new MysqliDb (Array (
-                'host' => 'host',
-                'username' => 'username',
-                'password' => 'password',
-                'db'=> 'databaseName',
-                'port' => 3306,
-                'prefix' => 'my_',
-                'charset' => 'utf8'));
+$cof_database = array(
+    'host' => 'localhost',
+    'username' => 'root',
+    'password' => '',
+    'db' => 'recuperacion',
+    'port' => 3306,
+    'prefix' => 'my_',
+    'charset' => 'utf8');
+
+$db = new MysqliDb ($cof_database);
 
 $smarty = new Smarty();
-$smarty->setTemplateDir(ROOT_DIR.'/views/templates/');
-$smarty->setCompileDir(ROOT_DIR.'/views/templates/compiles/');
+$smarty->setTemplateDir(ROOT_DIR . '/views/templates/');
+$smarty->setCompileDir(ROOT_DIR . '/views/templates/compiles/');
